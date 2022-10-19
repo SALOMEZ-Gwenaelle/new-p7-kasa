@@ -1,0 +1,43 @@
+.error404 {
+    color: $colorPrimary;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 30px;
+  
+    .errorTitle {
+      font-size: 288px;
+      font-weight: 700;
+    }
+  
+    .errorTxt {
+      font-size: 36px;
+      line-height: normal;
+      font-weight: 500;    
+      text-align: center;
+    }
+
+    .backLink {
+      color: $colorPrimary;
+    }
+  }
+  
+  @media screen and (max-width: $screen-sm) {
+    .error404 {
+      justify-content: center;
+      .errorTitle {
+        font-size: 96px;
+      }
+      .errorTxt {
+        font-size: 1.1rem;
+        line-height: normal;
+      }
+  
+      .backLink {
+        align-content: center;
+        margin-top: 90px
+      }
+    }
+  }

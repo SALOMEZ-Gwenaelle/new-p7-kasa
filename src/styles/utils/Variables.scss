@@ -1,0 +1,19 @@
+// Les couleurs de bases
+$colorPrimary: #FF6060; // orange fond et texte
+$colorSecondary: #F6F6F6; // gris du menu déroulant une fois ouvert
+$colorTag: #C4C4C4; // gris fond photo des personnes
+$colorFooter: #E3E3E3; // gris du texte du footer
+
+
+$gradientPrimary: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%); // dégradé de la miniature 
+
+// Pour le responsive : les media queries / taille d'écran
+$screen-max: 1280px;
+$screen-xl:1240px;
+$screen-lg:1024px;
+$screen-md:992px;
+$screen-sm:768px;
+$screen-min:320px;
+
+
+$fontFamilyPrimary: "Montserrat";

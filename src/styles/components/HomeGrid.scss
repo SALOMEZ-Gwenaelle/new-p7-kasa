@@ -1,0 +1,30 @@
+.homeGrid {
+    border-radius: 25px;
+    background-color: $colorSecondary;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    width: 100%;
+    max-width: $screen-xl;
+    padding: 56px 50px;
+}
+
+@media screen and (max-width: $screen-max) {
+    .homeGrid {
+        max-width: calc(100vw - 40px);
+    }
+}
+
+@media screen and (max-width: $screen-md) {
+    .homeGrid {
+        padding: 40px 35px;
+    }
+}
+@media screen and (max-width: $screen-sm) {
+    .homeGrid {
+        background-color: #FFFFFF;
+        padding: 20px;
+        max-width: 100%;
+    }
+}

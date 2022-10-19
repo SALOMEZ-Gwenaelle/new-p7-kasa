@@ -1,0 +1,24 @@
+@import
+    './utils/Variables'; // Importation du fichier des variables du thème du site
+
+@import
+    './bases/Reset', // Importation du fichier de style de la remise à 0 du style du navigateur
+    './bases/Base'; // Importation du fichier de style du thème général du site
+    
+@import
+    './pages/Home', // Importation du fichier de style de la page Home (page d'accueil)
+    './pages/Logement', // Importation du fichier de style de la page Logement
+    './pages/Error', // Importation du fichier de style de la page Error (page error 404)
+    './pages/About'; // Importation du fichier de style de la page About (page "à propos")
+
+@import
+    './layout/Header', // Importation du fichier de style du layout Header
+    './layout/Footer'; // Importation du fichier de style du layout Footer
+
+@import
+    './components/Banner.scss',
+    './components/Dropdown.scss',
+    './components/HomeGrid.scss',
+    './components/Thumb.scss',
+    './components/Tag.scss',
+    './components/Logement.scss';

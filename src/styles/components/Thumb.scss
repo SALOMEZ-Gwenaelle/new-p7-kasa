@@ -1,0 +1,61 @@
+.thumbAppartment {
+    width: 29.82456140350877%;
+    border-radius: 10px;
+    color: #FFFFFF;
+    background-color: $colorPrimary;
+    height: 340px;
+    margin-bottom: 50px;
+    margin-right: 5.263157894736842%;
+    overflow: hidden;
+    position: relative;
+    &:nth-child(3n) { /* chaque 3e élément de la grille ne doit pas comporter de marge à droite */
+        margin-right: 0;
+    }
+
+    &:before {  /* pseudo-élément chargé d'afficher le dégradé noir sur les images d'appartements */
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $gradientPrimary;
+    }
+
+    .thumbAppartmentLink {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 20px;
+        width: 100%;
+        height: 100%;
+        color: #FFFFFF;
+        text-decoration: none;
+        line-height: 1.5em;
+        font-size: 18px;
+    }
+
+    .thumbAppartmentImage {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: $screen-md) {
+    .thumbAppartment {
+        height: 290px;
+    }
+}
+@media screen and (max-width: $screen-sm) {
+    .thumbAppartment {
+        height: 255px;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}

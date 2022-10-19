@@ -1,0 +1,17 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    font-weight: 400;
+    color: $colorPrimary;
+    @media screen and (max-width: $screen-sm) {
+      gap: 20px;
+    }
+  }
+
+  .aboutContent {
+    width: 90%;
+    margin: 0 auto;
+  }

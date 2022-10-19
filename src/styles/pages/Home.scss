@@ -1,0 +1,12 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    font-weight: 400;
+    color: $colorPrimary;
+    @media screen and (max-width: $screen-sm) {
+      gap: 0px;
+    }
+}

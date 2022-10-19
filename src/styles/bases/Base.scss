@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+  }
+  
+body{
+    padding:0;
+    margin: 0;
+    font-family: $fontFamilyPrimary, sans-serif;
+    font-weight: 400;
+}
+  
+#root {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    min-width: $screen-min;
+}
+
+main {
+    flex-grow: 1;
+    flex-direction: column;
+    align-self: center;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    max-width: $screen-xl;
+}
