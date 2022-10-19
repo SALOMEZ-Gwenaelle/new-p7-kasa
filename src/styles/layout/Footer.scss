@@ -1,8 +1,7 @@
 .Footer {
-    // position: absolute;
     bottom: 0;
     width: 100%;
-    background: #000;
+    background: $colorFooter;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -13,4 +12,10 @@
     font-weight: 500;
     padding-top: 66px;
     padding-bottom: 29px;
-  }
+}
+
+@media screen and (max-width: $screen-sm) {
+    .Footer {
+      padding-top: 62px;
+    }
+}

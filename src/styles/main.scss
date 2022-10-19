@@ -13,6 +13,7 @@
 
 @import
     './layout/Header', // Importation du fichier de style du layout Header
+    './layout/Main', // Importation du fichier de style du corps du site
     './layout/Footer'; // Importation du fichier de style du layout Footer
 
 @import
@@ -21,6 +22,7 @@
     './components/HomeGrid.scss',
     './components/Thumb.scss',
     './components/Tag.scss',
-    './components/Logement.scss',
+    './components/Carousel.scss',
+    './components/Slide.scss',
     './components/Rating.scss',
     './components/Host.scss';

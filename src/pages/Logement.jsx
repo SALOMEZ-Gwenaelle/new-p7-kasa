@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Carousel from './../components/Carousel';
-import { useParams } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
 import appartments from '../datas/logements.json'
 import Dropdown from '../components/Dropdown';
 
@@ -11,47 +11,42 @@ import Host from '../components/Host';
 function Logement() {
     const { id } = useParams(); /* on récupère le paramètre récupéré dans l'URL */
     const [logementData, setlogementData] = useState({});  // on définit une fonction setLogementData qui rempliras la variable logementData qui représente un l'état de notre composant
-    const [error, setError] = useState(null);
+    const [loaded, setLoaded] = useState(false);    // jalon qui permet de savoir si on a trouvé dans l'API (ici le fichier JSON) l'appartement dont l'ID a été récupéré via l'URL
 
-       
     useEffect(()=>{
         try {
             const logementData = appartments.find(object => object.id === id);  // on récupère les logements dans le json
             setlogementData(logementData);  // on met les informations du logement dans le state
+            setLoaded(true);
         } catch (error) {
-            setError(error);
+            return(
+                <div>
+                    {error}
+                    <Navigate to="/erreur" />   {/* Redirige automatiquement vers la page d'erreur */}
+                </div>
+            )
         }
     }, [id]);
 
-    if (error) {    // en, cas d'erreur du fetch du JSON
-        return <span>Une erreur est apparue. Désolé pour la gêne occasionnée.</span>
-    }
-    
-    console.log(logementData.host);
-    if(Object.keys(logementData).length > 0){ // Sécurité: si notre objet n'est pas vide (il l'est au premier rendu, car le state logementData est vide), alors on affiche les infos disponibles
+    if(loaded && logementData !== undefined) {
         return (
             <div className="logement">
-                <Carousel appartId={id} />
+                <Carousel pictures={logementData.pictures} />
                 <div className='logementHeader'>
                     <div className='logementHeaderIntro'>
-                        <h1>
+                        <h1 className='logementHeaderTitle'>
                             {logementData.title}
                         </h1>
-                        <span className='logementLocation'>
+                        <span className='logementHeaderLocation'>
                             {logementData.location}
                         </span>
                         {logementData.tags.length > 0 ? <Tags tags={logementData.tags} /> : ''}
                         
                     </div>
-                    <div className='logementHost'>
-                        
-                    {logementData.rating.length > 0 ? <Rating rating={logementData.rating} /> : ''}
+                    <div className='logementHeaderHost'>
+                        {Object.keys(logementData.host).length > 0 ? <Host host={logementData.host} /> : ''}
                             
-                        
-                        
-                    {Object.keys(logementData.host).length > 0 ? <Host host={logementData.host} /> : ''}
-                            
-                        
+                        {logementData.rating.length > 0 ? <Rating rating={logementData.rating} /> : ''}
                     </div>
                 </div>
                 <div className='logementInfo'>
@@ -66,9 +61,16 @@ function Logement() {
     
             </div>
         )
+    } else if(!loaded) {
+        return(<div className="logement"><p>Chargement !</p></div>)
     } else {
-        return <></>
+        return(
+            <div>
+                <Navigate to="/erreur" />   {/* Redirige automatiquement vers la page d'erreur */}
+            </div>
+        )
     }
+    
 }
 
 

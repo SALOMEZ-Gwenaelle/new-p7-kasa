@@ -10,7 +10,7 @@ const Dropdown = ({ title, content }) => {
     <div className='dropdown'>
       <div className="dropdownHeader" onClick={() => isExpanded ? setIsExpanded(false) : setIsExpanded(true)}>
         <span className='dropdownTitle'>{title}</span>
-        <img alt= "" src={chevron} className={isExpanded ? 'chevron chevronOpened' : 'chevron'} />
+        <img alt="" src={chevron} className={isExpanded ? 'chevron chevronOpened' : 'chevron'} />
       </div>
       <div className={isExpanded ? 'dropdownContent dropdownOpened' : 'dropdownContent dropdownClosed'}>
         {

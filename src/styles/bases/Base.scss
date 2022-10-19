@@ -16,13 +16,3 @@ body{
     min-height: 100vh;
     min-width: $screen-min;
 }
-
-main {
-    flex-grow: 1;
-    flex-direction: column;
-    align-self: center;
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    max-width: $screen-xl;
-}

@@ -8,12 +8,12 @@
     gap: 30px;
   
     .errorTitle {
-      font-size: 288px;
+      font-size: clamp(96px,22.5vw,288px);
       font-weight: 700;
     }
   
     .errorTxt {
-      font-size: 36px;
+      font-size: clamp(18px,2.8125vw,36px);
       line-height: normal;
       font-weight: 500;    
       text-align: center;
@@ -31,7 +31,6 @@
         font-size: 96px;
       }
       .errorTxt {
-        font-size: 1.1rem;
         line-height: normal;
       }
   

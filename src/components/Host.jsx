@@ -1,11 +1,14 @@
 function Host (Host){
-    console.log(Host)
     let theHost = Host.host;
         return (
-            <span className='host'>
-                {theHost.name}
-                <img src={theHost.picture} alt='host'/>
-            </span>
+            <div className='host'>
+                <div className="hostName">
+                    {theHost.name}
+                </div>
+                <div className="hostImg">
+                    <img src={theHost.picture} alt='host'/>
+                </div>
+            </div>
         );
     
 };

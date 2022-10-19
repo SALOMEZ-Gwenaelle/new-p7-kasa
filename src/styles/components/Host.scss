@@ -1,3 +1,28 @@
 .host {
-    color: red;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    color: $colorPrimary;
+}
+
+.hostName {
+    font-size: clamp(12px, 1.4516vw, 18px); /* minimum 12px, maximum 18px, et au mieux 1.4vw */
+    text-align: right;
+    word-spacing: 100vw;    /* petite astuce pour obtenir le nom et prénom sur une ligne chacun, de manière automatique */
+}
+
+.hostImg img {
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    margin-left: 10px;;
+}
+
+@media screen and (max-width: $screen-sm) {
+    .hostImg img {
+        width: 32px;
+        height: 32px;;
+    }
+    
 }
