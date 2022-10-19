@@ -5,6 +5,8 @@ import appartments from '../datas/logements.json'
 import Dropdown from '../components/Dropdown';
 
 import Tags from '../components/Tags'
+import Rating from '../components/Rating';
+import Host from '../components/Host';
 
 function Logement() {
     const { id } = useParams(); /* on récupère le paramètre récupéré dans l'URL */
@@ -25,7 +27,7 @@ function Logement() {
         return <span>Une erreur est apparue. Désolé pour la gêne occasionnée.</span>
     }
     
-    console.log(logementData);
+    console.log(logementData.host);
     if(Object.keys(logementData).length > 0){ // Sécurité: si notre objet n'est pas vide (il l'est au premier rendu, car le state logementData est vide), alors on affiche les infos disponibles
         return (
             <div className="logement">
@@ -42,6 +44,13 @@ function Logement() {
                         
                     </div>
                     <div className='logementHost'>
+                        
+                    {logementData.rating.length > 0 ? <Rating rating={logementData.rating} /> : ''}
+                            
+                        
+                        
+                    {Object.keys(logementData.host).length > 0 ? <Host host={logementData.host} /> : ''}
+                            
                         
                     </div>
                 </div>

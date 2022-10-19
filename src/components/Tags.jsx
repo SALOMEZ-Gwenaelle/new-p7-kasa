@@ -1,5 +1,4 @@
 function Tags ({tags}){
-
   return (
     <div className='tags'>
       {
